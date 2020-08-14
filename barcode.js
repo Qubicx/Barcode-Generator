@@ -72,6 +72,7 @@ function pluCode(price) {
 
 function checkDigit(code) { //generates a UPC-A check digit
   digits = toArray(code);
+  console.log(digits);
   let even = 0;
   let odd = 0;
   for (let i = 0; i < digits.length; i++) {
@@ -81,7 +82,8 @@ function checkDigit(code) { //generates a UPC-A check digit
       even += Number(digits[i]);
     }
   }
-  sum = even + odd * 3;
+  console.log(even,odd);
+  sum = odd + even * 3;
   check = (10 - (sum % 10)) % 10;
   return check;
 }
